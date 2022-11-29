@@ -1,0 +1,70 @@
+.hint_text {
+    
+}
+
+.login_text {
+    
+}
+
+.login_Card {
+    height: 500px;
+    border-radius: 10px;
+    border-color: gainsboro;
+}
+
+.top_Section {
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.middle_Section {
+    height:  175px;
+    display: flex;
+    padding:15px;
+    flex-direction: column;
+}
+
+.email_Input_Text {
+    width: 100%;
+    height: 55px;
+    border-radius: 4px;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.forget_Button {
+    text-align: start;
+    padding: 1px;
+}
+
+.login_Button {
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.footer_Section {
+    height: 150px;
+    align-items: center;
+}
+
+.create_account_Button {
+    float: left;
+    padding: 0px;
+}
+
+.guest_mode_Section {
+   color:#5f6368;
+   font-size: 14px;
+   font-weight: 500;
+    text-align: start;
+    margin-top: 20px;
+}
+
