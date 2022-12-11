@@ -23,7 +23,7 @@ function LoginGoogle() {
       );
 
       setTimeout(() => {
-        location.href = '/';
+        window.location.href = '/';
       }, UX.DELAY_TIME);
     } catch (error) {}
   };

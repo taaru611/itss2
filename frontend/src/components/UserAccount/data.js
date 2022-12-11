@@ -63,7 +63,7 @@ function UserAccountData() {
         );
 
         setTimeout(() => {
-          location.reload();
+          window.location.reload();
         }, 750);
       }
     } catch (error) {

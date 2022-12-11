@@ -130,7 +130,7 @@ function Result({ score }) {
   };
 
   const onReplay = () => {
-    location.reload();
+    window.location.reload();
   };
 
   return (
