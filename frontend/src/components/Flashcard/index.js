@@ -26,7 +26,7 @@ function Flashcard({
   onWordPackChange,
 }) {
   const classes = useStyle();
-  const [mode, setMode] = useState(0); // 0 - gallery, 1 - slide show
+  const [mode, setMode] = useState(1); // 1 - slide show
   const [isShowMean, setIsShowMean] = useState(false);
   const [openWordPack, setOpenWordPack] = useState(false);
   const currentSlide = useRef(0);
@@ -36,13 +36,6 @@ function Flashcard({
       <div className="flex-center-between">
         <h1 className="dyno-title">Flashcard</h1>
         <div className={classes.iconWrap}>
-          <Tooltip title="Chế độ bộ sưu tập" placement="bottom">
-            <CollectionsIcon
-              onClick={() => setMode(0)}
-              className={`${classes.icon} ${mode === 0 ? 'active' : ''}`}
-            />
-          </Tooltip>
-
           <Tooltip title="Chế độ thẻ đơn" placement="bottom">
             <CarouselIcon
               onClick={() => setMode(1)}
