@@ -2,15 +2,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useStyle from './style';
+import './index.scss';
+
 
 function FeatureBox({ to, imgUrl, title, subTitle }) {
-  const classes = useStyle();
+  // const classes = useStyle();
   return (
-    <Link to={to} className={`${classes.root} flex-center--ver w-100`}>
-      <img className={classes.icon} src={imgUrl} alt="Icon" />
-      <div>
-        <h2 className={classes.title}>{title}</h2>
-        <p className={classes.subTitle}>{subTitle}</p>
+    <Link to={to} className="card-spec2">
+      {imgUrl}
+      <div className="contnent">
+        <h2 className="card-spec2-title">{title}</h2>
+        <p className="card-spec2-descr">{subTitle}</p>
       </div>
     </Link>
   );

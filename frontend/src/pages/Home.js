@@ -16,78 +16,71 @@ import { ROUTES } from 'constant';
 import useScrollTop from 'hooks/useScrollTop';
 import useTitle from 'hooks/useTitle';
 import React from 'react';
-
+import StyleIcon from '@mui/icons-material/Style';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import GTranslateIcon from '@mui/icons-material/GTranslate';
 const FEATURE_LIST = [
-  {
-    title: 'Bảng phiên âm (IPA)',
-    subTitle:
-      'Luyện nghe, phát âm chuẩn với 44 âm trong bảng phiên âm quốc tế IPA',
-    imgUrl: ipaIcon,
-    to: ROUTES.IPA,
-  },
-  {
-    title: '1000+ câu giao tiếp',
-    subTitle: 'Luyện nghe, nói câu tiếng Anh giao tiếp hàng ngày cùng Dyno',
-    imgUrl: communicateIcon,
-    to: ROUTES.COMMUNICATION_PHRASE,
-  },
   {
     title: 'Từ vựng với Flashcard',
     subTitle:
       'Flashcard phương pháp học từ vựng nổi tiếng. Nay hoàn toàn miễn phí trên Hama',
-    imgUrl: flashcardIcon,
+    imgUrl: <StyleIcon className='card-spec2-icon' sx={{ color: "#3498db" }}/>,
     to: ROUTES.FLASHCARD,
+    color: "#3498db",
   },
   {
     title: 'Từ điển trong Hama',
     subTitle: 'Danh sách từ vựng được phân loại theo cấp độ, loại từ, ...',
-    imgUrl: dictionaryIcon,
+    imgUrl: <LocalLibraryIcon className='card-spec2-icon' sx={{ color: "#27ae60" }}/>,
     to: ROUTES.DYNO_DICTIONARY,
   },
   {
-    title: 'Từ vựng TOEIC',
-    subTitle: 'Các từ vựng thường gặp trong đề thi Toeic',
-    imgUrl: toeicIcon,
-    to: ROUTES.TOEIC_DICTIONARY,
-  },
-  {
     title: 'Từ vựng yêu thích của bạn',
-    imgUrl: favoriteIcon,
+    imgUrl: <FavoriteIcon className='card-spec2-icon' sx={{ color: "#e74c3c" }}/>,
     subTitle: 'Danh sách những từ vựng yêu thích mà bạn đã lưu',
     to: ROUTES.FAVORITE,
   },
   {
-    title: 'Động từ bất quy tắc',
-    imgUrl: verbIcon,
-    subTitle: 'Tất cả những động từ bất quy tắc trong tiếng Anh',
-    to: ROUTES.IRREGULAR,
-  },
-  {
     title: 'Ngữ pháp',
-    imgUrl: grammarIcon,
+    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
     subTitle: 'Danh sách tổng hợp những cấu trúc câu trong tiếng Anh',
     to: ROUTES.GRAMMAR,
   },
-  {
-    title: 'Play Games',
-    imgUrl: gameIcon,
-    subTitle:
-      'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc chơi game cùng Dyno nhé',
-    to: ROUTES.GAMES.HOME,
-  },
-  {
-    title: 'Bảng xếp hạng',
-    imgUrl: medalIcon,
-    subTitle: 'Cùng xem thành tích của bạn bè và những người khác nhé',
-    to: ROUTES.LEADERBOARD,
-  },
-  {
-    title: 'Đóng góp',
-    imgUrl: editIcon,
-    subTitle:
-      'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
-    to: ROUTES.CONTRIBUTION,
-  },
+  // {
+  //   title: 'Từ vựng TOEIC',
+  //   subTitle: 'Các từ vựng thường gặp trong đề thi Toeic',
+  //   imgUrl: toeicIcon,
+  //   to: ROUTES.TOEIC_DICTIONARY,
+  // },
+  
+  // {
+  //   title: 'Động từ bất quy tắc',
+  //   imgUrl: verbIcon,
+  //   subTitle: 'Tất cả những động từ bất quy tắc trong tiếng Anh',
+  //   to: ROUTES.IRREGULAR,
+  // },
+  
+  // {
+  //   title: 'Play Games',
+  //   imgUrl: gameIcon,
+  //   subTitle:
+  //     'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc chơi game cùng Dyno nhé',
+  //   to: ROUTES.GAMES.HOME,
+  // },
+  // {
+  //   title: 'Bảng xếp hạng',
+  //   imgUrl: medalIcon,
+  //   subTitle: 'Cùng xem thành tích của bạn bè và những người khác nhé',
+  //   to: ROUTES.LEADERBOARD,
+  // },
+  // {
+  //   title: 'Đóng góp',
+  //   imgUrl: editIcon,
+  //   subTitle:
+  //     'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
+  //   to: ROUTES.CONTRIBUTION,
+  // },
 ];
 
 function HomePage() {
@@ -98,7 +91,7 @@ function HomePage() {
     <div className="container my-10">
       <Grid container spacing={3}>
         {FEATURE_LIST.map((box, index) => (
-          <Grid item xs={12} md={6} lg={4} key={index}>
+          <Grid item xs={12} md={12} lg={12} key={index}>
             <FeatureBox
               imgUrl={box.imgUrl}
               title={box.title}
