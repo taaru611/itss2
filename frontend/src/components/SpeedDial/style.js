@@ -5,6 +5,8 @@ export default makeStyles(() => ({
     position: 'fixed',
     bottom: 16,
     right: 16,
+    display: 'none',
+
 
     '& .MuiSpeedDialAction-fab': {
       backgroundColor: 'var(--bg-color-accent)',
