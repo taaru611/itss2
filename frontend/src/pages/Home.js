@@ -84,7 +84,7 @@ const FEATURE_LIST = [
 ];
 
 function HomePage() {
-  useTitle('Hama - Ứng dụng học tiếng Anh miễn phí');
+  useTitle('Hama - Ứng dụng học tiếng Nhật miễn phí');
   useScrollTop();
 
   return (

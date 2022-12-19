@@ -14,6 +14,8 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SettingMenu from './SettingMenu';
 import useStyle from './style';
+import './index.scss';
+
 
 function Navigation() {
   const classes = useStyle();
@@ -55,19 +57,22 @@ function Navigation() {
             )}
 
             {/* Search bar */}
-            <div className="mr-5">
+            <div className="mr-5 search-box-cus">
               <SearchInputCustom
+              className="search-content"
                 placeholder="Nhập từ khoá ..."
                 showInput={isXsDevice || showInput}
                 prefixIcon={
                   <Search
-                    className={classes.searchIcon}
+                    
                     onClick={() => setShowInput(true)}
                   />
                 }
               />
             </div>
+          </div>
 
+          <div className={`${classes.control} flex-center--ver`}>
             {isAuth ? (
               <Avatar
                 onClick={onOpenMenu}
