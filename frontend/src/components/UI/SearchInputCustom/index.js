@@ -6,12 +6,14 @@ import wordApi from 'apis/wordApi';
 import { MAX } from 'constant';
 import NAV_SEARCH_DATA from 'constant/nav-search-data';
 import { debounce } from 'helper';
+import "./index.scss";
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import WordDetailModal from '../WordDetailModal';
 import useStyle from './style';
 let timer = null;
+
 
 function SearchInputCustom({ placeholder, showInput, prefixIcon }) {
   const classes = useStyle();
@@ -67,7 +69,7 @@ function SearchInputCustom({ placeholder, showInput, prefixIcon }) {
   };
 
   return (
-    <div className={classes.nativeInput}>
+    <div className={classes.nativeInput+" custom-search-1"}>
       <div
         ref={searchBarRef}
         className={`${classes.icon} flex-center ${

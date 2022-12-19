@@ -2,6 +2,7 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import React from 'react';
 import useStyle from './style';
+import "./index.scss"
 
 function InputCustom(props) {
   const { endAdornment, error, inputProps, ...propRest } = props;

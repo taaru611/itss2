@@ -84,7 +84,7 @@ function Navigation() {
             ) : (
               <Link to={ROUTES.LOGIN}>
                 <Button
-                  className="_btn _btn-primary"
+                  className="_btn button-75"
                   classes={{
                     root: classes.loginBtn,
                     label: classes.loginLabel,
