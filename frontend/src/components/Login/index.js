@@ -14,7 +14,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
-
+import "./button.css"
+import "./index.scss"
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -42,6 +43,7 @@ function LoginLocalForm(props) {
   });
 
   return (
+    <>
     <form
       className={`${classes.root} flex-col`}
       onSubmit={handleSubmit(onLogin)}
@@ -118,7 +120,9 @@ function LoginLocalForm(props) {
       <div className="or-option w-100 t-center">HOẶC</div>
 
       {props.children}
+      
     </form>
+    </>
   );
 }
 
