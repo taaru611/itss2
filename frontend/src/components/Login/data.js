@@ -25,6 +25,7 @@ function LoginData() {
         }, UX.DELAY_TIME);
       }
     } catch (error) {
+      console.log('🚀 ~ file: data.js:28 ~ handleLogin ~ error', error);
       const message = error.response?.data?.message || 'Thất bại, thử lại !';
       dispatch(setMessage({ message, type: 'error' }));
       setLoading(false);

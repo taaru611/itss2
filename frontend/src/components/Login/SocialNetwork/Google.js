@@ -1,11 +1,12 @@
 import accountApi from 'apis/accountApi';
 import ggIcon from 'assets/icons/gg-icon.png';
 import { UX } from 'constant';
-import React from 'react';
+import React, { useEffect } from 'react';
 import GoogleLogin from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { setMessage } from 'redux/slices/message.slice';
 import useStyle from './style';
+import { gapi } from 'gapi-script';
 
 function LoginGoogle() {
   const classes = useStyle();
@@ -45,6 +46,19 @@ function LoginGoogle() {
       dispatch(setMessage({ type: 'error', message }));
     }
   };
+  const onLoginFailure = (res) => {
+    console.log('[Login failed res]', res);
+  };
+
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+        scope: '',
+      });
+    };
+    gapi.load('client:auth2', initClient);
+  }, []);
 
   return (
     <GoogleLogin
@@ -60,7 +74,7 @@ function LoginGoogle() {
         </div>
       )}
       onSuccess={onLoginWithGoogle}
-      onFailure={onLoginWithGoogle}
+      onFailure={onLoginFailure}
       cookiePolicy={'single_host_origin'}
     />
   );
