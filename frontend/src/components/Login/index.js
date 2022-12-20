@@ -14,8 +14,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
-import "./button.css"
-import "./index.scss"
+import './button.css';
+import './index.scss';
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -44,84 +44,85 @@ function LoginLocalForm(props) {
 
   return (
     <>
-    <form
-      className={`${classes.root} flex-col`}
-      onSubmit={handleSubmit(onLogin)}
-      autoComplete="off">
-      <div className="flex-col">
-        <h1 className={`${classes.title} t-center`}>Đăng nhập</h1>
-        <div className="t-center mt-5">
-          <LockIcon className={classes.labelIcon} />
+      <form
+        className={`${classes.root} flex-col`}
+        onSubmit={handleSubmit(onLogin)}
+        autoComplete="off">
+        <div className="flex-col">
+          <h1 className={`${classes.title} t-center`}>Đăng nhập</h1>
+          <div className="t-center mt-5">
+            <LockIcon className={classes.labelIcon} />
+          </div>
         </div>
-      </div>
 
-      <div className="flex-col">
-        <InputCustom
-          label="Email"
-          size="small"
-          placeholder="Nhập email"
-          error={Boolean(errors.email)}
-          inputProps={{
-            name: 'email',
-            maxLength: MAX.EMAIL_LEN,
-            autoFocus: true,
-            ...register('email'),
-          }}
-        />
-        {errors.email && <p className="text-error">{errors.email?.message}</p>}
-      </div>
+        <div className="flex-col">
+          <InputCustom
+            label="Email"
+            size="small"
+            placeholder="Nhập email"
+            error={Boolean(errors.email)}
+            inputProps={{
+              name: 'email',
+              maxLength: MAX.EMAIL_LEN,
+              autoFocus: true,
+              ...register('email'),
+            }}
+          />
+          {errors.email && (
+            <p className="text-error">{errors.email?.message}</p>
+          )}
+        </div>
 
-      <div className="flex-col">
-        <InputCustom
-          label="Mật khẩu"
-          size="small"
-          placeholder="Nhập mật khẩu"
-          error={Boolean(errors.password)}
-          inputProps={{
-            name: 'password',
-            maxLength: MAX.PASSWORD_LEN,
-            type: visiblePw ? 'text' : 'password',
-            ...register('password'),
-          }}
-          endAdornment={
-            visiblePw ? (
-              <VisibilityIcon
-                className={`${classes.icon} ${classes.visiblePw}`}
-                onClick={() => setVisiblePw(false)}
-              />
-            ) : (
-              <VisibilityOffIcon
-                className={classes.icon}
-                onClick={() => setVisiblePw(true)}
-              />
-            )
-          }
-        />
-        {errors.password && (
-          <p className="text-error">{errors.password?.message}</p>
-        )}
-      </div>
+        <div className="flex-col">
+          <InputCustom
+            label="Mật khẩu"
+            size="small"
+            placeholder="Nhập mật khẩu"
+            error={Boolean(errors.password)}
+            inputProps={{
+              name: 'password',
+              maxLength: MAX.PASSWORD_LEN,
+              type: visiblePw ? 'text' : 'password',
+              ...register('password'),
+            }}
+            endAdornment={
+              visiblePw ? (
+                <VisibilityIcon
+                  className={`${classes.icon} ${classes.visiblePw}`}
+                  onClick={() => setVisiblePw(false)}
+                />
+              ) : (
+                <VisibilityOffIcon
+                  className={classes.icon}
+                  onClick={() => setVisiblePw(true)}
+                />
+              )
+            }
+          />
+          {errors.password && (
+            <p className="text-error">{errors.password?.message}</p>
+          )}
+        </div>
 
-      <Link className={classes.forgotPw} to={ROUTES.FORGOT_PASSWORD}>
-        Quên mật khẩu ?
-      </Link>
+        <Link className={classes.forgotPw} to={ROUTES.FORGOT_PASSWORD}>
+          Quên mật khẩu ?
+        </Link>
 
-      <Button
-        className="_btn _btn-primary"
-        type="submit"
-        variant="contained"
-        color="primary"
-        disabled={loading}
-        endIcon={loading && <LoopIcon className="ani-spin" />}
-        size="large">
-        Đăng nhập
-      </Button>
+        <Button
+          className="_btn _btn-primary"
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={loading}
+          endIcon={loading && <LoopIcon className="ani-spin" />}
+          size="large">
+          Đăng nhập
+        </Button>
 
-      <div className="or-option w-100 t-center">HOẶC</div>
+        <div className="or-option w-100 t-center">HOẶC</div>
 
-      {props.children}
-      
-    </form>
+        {props.children}
+      </form>
     </>
   );
 }
