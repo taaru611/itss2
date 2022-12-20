@@ -140,29 +140,26 @@ export const WORD_LEVELS = [
     label: 'Chưa xác định',
   },
   {
-    value: 'A1',
-    label: 'A1',
+    value: 'N1',
+    label: 'N1',
   },
   {
-    value: 'A2',
-    label: 'A2',
+    value: 'N2',
+    label: 'N2',
   },
   {
-    value: 'B1',
-    label: 'B1',
+    value: 'N3',
+    label: 'N3',
   },
   {
-    value: 'B2',
-    label: 'B2',
+    value: 'N4',
+    label: 'N4',
   },
   {
-    value: 'C1',
-    label: 'C1',
+    value: 'N5',
+    label: 'N5',
   },
-  {
-    value: 'C2',
-    label: 'C2',
-  },
+  
 ];
 
 export const WORD_SPECIALTY = [

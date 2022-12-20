@@ -2,8 +2,8 @@ import WrongIcon from '@material-ui/icons/Cancel';
 import RightIcon from '@material-ui/icons/CheckCircle';
 import logoGame from 'assets/icons/games/correct-word.png';
 import { UX } from 'constant';
-import { playSoundAnswer } from 'helper/speaker.helper';
-import useSpeaker from 'hooks/useSpeaker';
+// import { playSoundAnswer } from 'helper/speaker.helper';
+// import useSpeaker from 'hooks/useSpeaker';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import CorrectWordResult from '../Result';
@@ -24,7 +24,7 @@ function addClassAnswerItem(status, answerIndex, index, word, answer) {
 
 function CorrectWord({ list }) {
   const classes = useStyle();
-  const { voice, speed, volume } = useSpeaker();
+  // const { voice, speed, volume } = useSpeaker();
 
   // fix Can't perform a React state update on an unmounted component
   const isSubscribe = useRef(true);
@@ -56,7 +56,7 @@ function CorrectWord({ list }) {
 
   const onAnswer = (answer, answerIndex) => {
     if (answer === word) {
-      playSoundAnswer(word, true, voice, volume, speed);
+      // playSoundAnswer(word, true, voice, volume, speed);
       setState({
         ...state,
         nRight: nRight + 1,
@@ -65,7 +65,7 @@ function CorrectWord({ list }) {
       });
       nRightConsecutive.current.n++;
     } else {
-      playSoundAnswer(word, false, voice, volume, speed);
+      // playSoundAnswer(word, false, voice, volume, speed);
       setState({
         ...state,
         nWrong: nWrong + 1,
