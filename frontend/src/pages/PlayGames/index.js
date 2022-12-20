@@ -10,6 +10,7 @@ import { ROUTES } from 'constant';
 import useScrollTop from 'hooks/useScrollTop';
 import useTitle from 'hooks/useTitle';
 import React from 'react';
+import QuizIcon from '@mui/icons-material/Quiz';
 
 const { GAMES } = ROUTES;
 
@@ -18,23 +19,23 @@ const GAME_LIST = [
     title: 'Hãy chọn từ đúng',
     subTitle:
       'Ôn tập từ vựng bằng cách chọn 1 đáp án đúng nhất trong 4 câu trả lời có nghĩa khớp với từ được cho.',
-    imgUrl: correctWordIcon,
+    imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
     to: GAMES.CORRECT_WORD,
   },
-  {
-    title: 'Ghép từ',
-    subTitle:
-      'Ghép các ký tự đã cho thành một chữ có nghĩa đúng với từ đã cho.',
-    imgUrl: wordMatchingIcon,
-    to: GAMES.WORD_MATCHING,
-  },
-  {
-    title: 'Tay nhanh hơn não',
-    subTitle:
-      'Chọn một hình ảnh đúng với từ đã cho trong thời gian nhanh nhất nhé.',
-    imgUrl: brainIcon,
-    to: GAMES.FAST_GAME,
-  },
+  // {
+  //   title: 'Ghép từ',
+  //   subTitle:
+  //     'Ghép các ký tự đã cho thành một chữ có nghĩa đúng với từ đã cho.',
+  //   imgUrl: wordMatchingIcon,
+  //   to: GAMES.WORD_MATCHING,
+  // },
+  // {
+  //   title: 'Tay nhanh hơn não',
+  //   subTitle:
+  //     'Chọn một hình ảnh đúng với từ đã cho trong thời gian nhanh nhất nhé.',
+  //   imgUrl: brainIcon,
+  //   to: GAMES.FAST_GAME,
+  // },
   /* {
     title: 'Hãy chọn từ đúng (nâng cao)',
     subTitle: 'Chọn tất cả các từ đồng nghĩa (trái nghĩa) với từ đã cho.',

@@ -20,6 +20,7 @@ import StyleIcon from '@mui/icons-material/Style';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
+import QuizIcon from '@mui/icons-material/Quiz';
 const FEATURE_LIST = [
   {
     title: 'Từ vựng với Flashcard',
@@ -61,13 +62,13 @@ const FEATURE_LIST = [
   //   to: ROUTES.IRREGULAR,
   // },
   
-  // {
-  //   title: 'Play Games',
-  //   imgUrl: gameIcon,
-  //   subTitle:
-  //     'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc chơi game cùng Dyno nhé',
-  //   to: ROUTES.GAMES.HOME,
-  // },
+  {
+    title: 'Làm bài Test',
+    imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
+    subTitle:
+      'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc làm bài test',
+    to: ROUTES.GAMES.HOME,
+  },
   // {
   //   title: 'Bảng xếp hạng',
   //   imgUrl: medalIcon,

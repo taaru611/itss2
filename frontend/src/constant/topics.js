@@ -117,16 +117,16 @@ export const TOPICS = [
     title: 'Thú vị',
     icon: excitingIcon,
   },
-  {
-    key: TOEIC_KEY,
-    title: 'TOEIC',
-    icon: toeicIcon,
-  },
-  {
-    key: '21',
-    title: 'IELTS',
-    icon: ieltsIcon,
-  },
+  // {
+  //   key: TOEIC_KEY,
+  //   title: 'TOEIC',
+  //   icon: toeicIcon,
+  // },
+  // {
+  //   key: '21',
+  //   title: 'IELTS',
+  //   icon: ieltsIcon,
+  // },
   {
     key: '23',
     title: 'Thiên nhiên',
