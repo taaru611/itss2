@@ -5,6 +5,7 @@ import CarouselIcon from '@material-ui/icons/ViewCarousel';
 import CollectionsIcon from '@material-ui/icons/ViewQuilt';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import TooltipCustom from 'components/UI/TooltipCustom';
 import WordPack from 'components/UI/WordPack';
 import PropTypes from 'prop-types';
@@ -31,6 +32,11 @@ function Flashcard({
   const [openWordPack, setOpenWordPack] = useState(false);
   const currentSlide = useRef(0);
 
+  function handlefavorite(e) {
+    e.preventDefault();    
+    console.log(e);
+  }
+
   return (
     <div className="container my-10">
       <div className="flex-center-between">
@@ -42,6 +48,7 @@ function Flashcard({
               className={`${classes.icon} ${mode === 1 ? 'active' : ''}`}
             />
           </Tooltip>
+
 
           <Tooltip title="Xem nghĩa của từ" placement="bottom">
             {isShowMean ? (
