@@ -4,7 +4,7 @@
   "description": "<h1 align=\"center\"> Dynonary English - Ứng dụng học tiếng Anh miễn phí cho người Việt </h1>",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/index.js",
+    "start": "cd backend && npm start",
     "build": "cd backend && npm install && cd ../frontend && npm install && npm run build"
   },
   "repository": {

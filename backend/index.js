@@ -12,7 +12,7 @@ const https = require('https');
 
 // import local file
 const { MAX } = require('./src/constant');
-const corsConfig = require('./src/configs/cors.config');
+// const corsConfig = require('./src/configs/cors.config');
 const accountApi = require('./src/apis/account.api');
 const wordApi = require('./src/apis/word.api');
 const gameApi = require('./src/apis/game.api');
@@ -54,17 +54,21 @@ if (!dev) {
 const mongoose = require('mongoose');
 const MONGO_URL = dev ? process.env.MONGO_URL_LOCAL : process.env.MONGO_URL;
 
-mongoose.connect(MONGO_URL, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-});
+mongoose
+  .connect(MONGO_URL, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log('DB connect successful');
+  });
 
 // ================== config ==================
 app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
 app.use(express.urlencoded({ limit: MAX.SIZE_JSON_REQUEST }));
 app.use(cookieParser());
-app.use(cors(corsConfig));
+app.use(cors());
 
 // ================== Listening ... ==================
 app.listen(PORT, () => {
