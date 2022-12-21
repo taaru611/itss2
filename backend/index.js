@@ -69,7 +69,7 @@ app.listen(PORT, () => {
 });
 
 // ================== Apis ==================
-const BASE_URL = '/apis';
+const BASE_URL = '';
 app.use(`${BASE_URL}/account`, accountApi);
 app.use(`${BASE_URL}/word`, wordApi);
 app.use(`${BASE_URL}/games`, gameApi);
