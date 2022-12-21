@@ -29,7 +29,8 @@ const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT);
 
 // ================== setup ==================
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 const dev = app.get('env') !== 'production';
 
@@ -37,7 +38,7 @@ if (!dev) {
   app.disable('x-powered-by');
   app.use(morgan('common'));
   app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html')),
+    res.sendFile(path.join(__dirname, 'frontend/build/index.html')),
   );
 } else {
   app.use(morgan('dev'));
