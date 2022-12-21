@@ -87,7 +87,7 @@ function WordPack(props) {
               />
             </Grid>
 
-            {topicMultiples ? (
+            {/* {topicMultiples ? (
               <TopicSelect
                 onChange={(topicList) => (topics.current = topicList)}
                 buttonWrapper={(props) => (
@@ -104,7 +104,7 @@ function WordPack(props) {
                   inputProps={{ name: 'topic' }}
                 />
               </Grid>
-            )}
+            )} */}
 
             {Boolean(props.children) && (
               <Grid item xs={12} md={6}>

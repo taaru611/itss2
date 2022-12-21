@@ -29,23 +29,16 @@ const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT);
 
 // ================== setup ==================
-app.use(express.static(path.join(__dirname, '/src/build')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 const dev = app.get('env') !== 'production';
 
 if (!dev) {
   app.disable('x-powered-by');
   app.use(morgan('common'));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/src/build', 'index.html'));
-  });
-
-  // Auto wake up heroku
-  // app.get('/apis/wakeup-heroku', (req, res) => res.send('ok'));
-  // const timer = 25 * 60 * 1000; // 25 minutes
-  // setInterval(() => {
-  //   https.get('https://dynonary.herokuapp.com/apis/wakeup-heroku');
-  // }, timer);
+  app.get('*', (req, res) =>
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html')),
+  );
 } else {
   app.use(morgan('dev'));
 }
@@ -54,11 +47,15 @@ if (!dev) {
 const mongoose = require('mongoose');
 const MONGO_URL = dev ? process.env.MONGO_URL_LOCAL : process.env.MONGO_URL;
 
-mongoose.connect(MONGO_URL, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-});
+mongoose
+  .connect(MONGO_URL, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log('DB connect successful');
+  });
 
 // ================== config ==================
 app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
@@ -72,7 +69,7 @@ app.listen(PORT, () => {
 });
 
 // ================== Apis ==================
-const BASE_URL = '/apis';
+const BASE_URL = '';
 app.use(`${BASE_URL}/account`, accountApi);
 app.use(`${BASE_URL}/word`, wordApi);
 app.use(`${BASE_URL}/games`, gameApi);
@@ -85,9 +82,5 @@ app.use(
   passportConfig.jwtAuthentication,
   highscoreApi,
 );
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/src/build', 'index.html'));
-});
 
 module.exports = app;

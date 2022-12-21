@@ -64,6 +64,15 @@ export const ROUTES = {
   IRREGULAR: '/irregular-verbs',
   USER_ACCOUNT: '/profile',
   LEADERBOARD: '/leaderboard',
+  LESSONS: {
+    HOME: '/lessons',
+    LESSON_N1: '/lessons/lesson-n1',
+    LESSON_N2: '/lessons/lesson-n2',
+    LESSON_N3: '/lessons/lesson-n3',
+    LESSON_N4: '/lessons/lesson-n4',
+    LESSON_N5: '/lessons/lesson-n5',
+    LESSON_PAGE: '/lessons/lesson-page'
+  },
   GAMES: {
     HOME: '/games',
     CORRECT_WORD: '/games/correct-word',
@@ -140,26 +149,29 @@ export const WORD_LEVELS = [
     label: 'Chưa xác định',
   },
   {
-    value: 'N1',
-    label: 'N1',
+    value: 'A1',
+    label: 'A1',
   },
   {
-    value: 'N2',
-    label: 'N2',
+    value: 'A2',
+    label: 'A2',
   },
   {
-    value: 'N3',
-    label: 'N3',
+    value: 'B1',
+    label: 'B1',
   },
   {
-    value: 'N4',
-    label: 'N4',
+    value: 'B2',
+    label: 'B2',
   },
   {
-    value: 'N5',
-    label: 'N5',
+    value: 'C1',
+    label: 'C1',
   },
-  
+  {
+    value: 'C2',
+    label: 'C2',
+  },
 ];
 
 export const WORD_SPECIALTY = [

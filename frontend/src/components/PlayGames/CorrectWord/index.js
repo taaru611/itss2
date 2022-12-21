@@ -55,6 +55,7 @@ function CorrectWord({ list }) {
   }, []);
 
   const onAnswer = (answer, answerIndex) => {
+    list.splice(current, 1, { ...list[current], userAnswer: answer });
     if (answer === word) {
       // playSoundAnswer(word, true, voice, volume, speed);
       setState({
@@ -192,6 +193,7 @@ function CorrectWord({ list }) {
           </>
         ) : (
           <CorrectWordResult
+            gameHistory={list}
             onReplay={handleReplay}
             nRight={nRight}
             nWrong={nWrong}
