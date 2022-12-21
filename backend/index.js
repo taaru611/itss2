@@ -29,23 +29,16 @@ const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT);
 
 // ================== setup ==================
-app.use(express.static(path.join(__dirname, '/src/build')));
+app.use(express.static(path.join(__dirname, '/frontend/build')));
 
 const dev = app.get('env') !== 'production';
 
 if (!dev) {
   app.disable('x-powered-by');
   app.use(morgan('common'));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/src/build', 'index.html'));
-  });
-
-  // Auto wake up heroku
-  // app.get('/apis/wakeup-heroku', (req, res) => res.send('ok'));
-  // const timer = 25 * 60 * 1000; // 25 minutes
-  // setInterval(() => {
-  //   https.get('https://dynonary.herokuapp.com/apis/wakeup-heroku');
-  // }, timer);
+  app.get('*', (req, res) =>
+    res.sendFile(path.join(__dirname, '/frontend/build/index.html')),
+  );
 } else {
   app.use(morgan('dev'));
 }
@@ -90,8 +83,8 @@ app.use(
   highscoreApi,
 );
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/src/build', 'index.html'));
-});
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html')),
+);
 
 module.exports = app;
