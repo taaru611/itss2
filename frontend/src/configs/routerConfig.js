@@ -24,6 +24,13 @@ const IrregularVerbPage = React.lazy(() => import('pages/IrregularVerb'));
 const ForgotPasswordPage = React.lazy(() => import('pages/ForgotPassword'));
 const UserAccountPage = React.lazy(() => import('pages/UserAccount'));
 const LeaderBoardPage = React.lazy(() => import('pages/LeaderBoard'));
+const Lessons = React.lazy(() => import('pages/Lessons/index'));
+const LessonN1Page = React.lazy(() => import('pages/Lessons/LessonN1'));
+const LessonN2Page = React.lazy(() => import('pages/Lessons/LessonN2'));
+const LessonN3Page = React.lazy(() => import('pages/Lessons/LessonN3'));
+const LessonN4Page = React.lazy(() => import('pages/Lessons/LessonN4'));
+const LessonN5Page = React.lazy(() => import('pages/Lessons/LessonN5'));
+const LessonPage = React.lazy(() => import('pages/Lessons/LessonPage'));
 
 // routes for app
 const routes = [
@@ -142,10 +149,52 @@ const routes = [
     component: () => <LeaderBoardPage />,
   },
   {
+    path: ROUTES.LESSONS.HOME,
+    exact: true,
+    isProtect: false,
+    component: () => <Lessons />,
+  },
+  {
     path: ROUTES.GAMES.FAST_GAME,
     exact: false,
     isProtect: false,
     component: () => <FastGamePage />,
+  },
+  {
+    path: ROUTES.LESSONS.LESSON_N1,
+    exact: false,
+    isProtect: false,
+    component: () => <LessonN1Page />,
+  },
+  {
+    path: ROUTES.LESSONS.LESSON_N2,
+    exact: false,
+    isProtect: false,
+    component: () => <LessonN2Page />,
+  },
+  {
+    path: ROUTES.LESSONS.LESSON_N3,
+    exact: false,
+    isProtect: false,
+    component: () => <LessonN3Page />,
+  },
+  {
+    path: ROUTES.LESSONS.LESSON_N4,
+    exact: false,
+    isProtect: false,
+    component: () => <LessonN4Page />,
+  },
+  {
+    path: ROUTES.LESSONS.LESSON_N5,
+    exact: false,
+    isProtect: false,
+    component: () => <LessonN5Page />,
+  },
+  {
+    path: ROUTES.LESSONS.LESSON_PAGE,
+    exact: false,
+    isProtect: false,
+    component: () => <LessonPage />,
   },
 ];
 

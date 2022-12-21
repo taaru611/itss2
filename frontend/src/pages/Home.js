@@ -89,6 +89,13 @@ const FEATURE_LIST = [
   //     'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
   //   to: ROUTES.CONTRIBUTION,
   // },
+  {
+    title: 'Bài học',
+    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,
+    subTitle:
+      'Lựa chọn học theo cấp độ N1, N2, N3,..',
+    to: ROUTES.LESSONS.HOME,
+  },
 ];
 
 function HomePage() {
