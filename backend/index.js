@@ -12,7 +12,7 @@ const https = require('https');
 
 // import local file
 const { MAX } = require('./src/constant');
-// const corsConfig = require('./src/configs/cors.config');
+const corsConfig = require('./src/configs/cors.config');
 const accountApi = require('./src/apis/account.api');
 const wordApi = require('./src/apis/word.api');
 const gameApi = require('./src/apis/game.api');
@@ -61,7 +61,7 @@ mongoose
 app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
 app.use(express.urlencoded({ limit: MAX.SIZE_JSON_REQUEST }));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors(corsConfig));
 
 // ================== Listening ... ==================
 app.listen(PORT, () => {
