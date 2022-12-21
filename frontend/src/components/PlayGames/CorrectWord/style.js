@@ -62,7 +62,7 @@ export default makeStyles((theme) => ({
   },
 }));
 
-export const cwResultStyle = makeStyles(() => ({
+export const cwResultStyle = makeStyles((theme) => ({
   root: {
     minHeight: '65vh',
   },
@@ -85,5 +85,55 @@ export const cwResultStyle = makeStyles(() => ({
 
   icon: {
     margin: '0 0.6rem',
+  },
+  question: {
+    fontSize: '2.4rem',
+    color: 'var(--text-color)',
+    fontWeight: 'bold',
+  },
+
+  result: {
+    fontSize: '1.5rem',
+  },
+
+  answers: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
+    gap: '1.2rem',
+    padding: '2.4rem 0',
+
+    [theme.breakpoints.up('md')]: {
+      width: '100%',
+      margin: '0 auto',
+      maxWidth: '50%',
+      minWidth: '40rem',
+      gap: '2.4rem',
+    },
+  },
+
+  answerItem: {
+    backgroundColor: 'var(--bg-color-accent)',
+    borderRadius: 'var(--border-radius)',
+
+    color: 'var(--text-color)',
+    fontSize: '2rem',
+
+    cursor: 'pointer',
+    transition: 'all 0.25s',
+    '&:hover, &:active': {
+      backgroundColor: 'var(--hover-color)',
+    },
+
+    '& .phonetic': {
+      opacity: 0.8,
+      fontSize: '1.6rem',
+    },
+    '&.right': {
+      border: 'solid 1px var(--right-color)',
+    },
+    '&.wrong': {
+      border: 'solid 1px var(--error-color)',
+    },
   },
 }));
