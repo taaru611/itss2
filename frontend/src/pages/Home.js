@@ -42,12 +42,12 @@ const FEATURE_LIST = [
     subTitle: 'Danh sách những từ vựng yêu thích mà bạn đã lưu',
     to: ROUTES.FAVORITE,
   },
-  {
-    title: 'Ngữ pháp',
-    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
-    subTitle: 'Danh sách tổng hợp những cấu trúc câu trong tiếng Anh',
-    to: ROUTES.GRAMMAR,
-  },
+  // {
+  //   title: 'Ngữ pháp',
+  //   imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
+  //   subTitle: 'Danh sách tổng hợp những cấu trúc câu',
+  //   to: ROUTES.GRAMMAR,
+  // },
   // {
   //   title: 'Từ vựng TOEIC',
   //   subTitle: 'Các từ vựng thường gặp trong đề thi Toeic',
