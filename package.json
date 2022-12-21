@@ -1,0 +1,21 @@
+{
+  "name": "itss2",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\"> Dynonary English - Ứng dụng học tiếng Anh miễn phí cho người Việt </h1>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddevtk/itss2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddevtk/itss2/issues"
+  },
+  "homepage": "https://github.com/ddevtk/itss2#readme"
+}
