@@ -11,6 +11,8 @@ import useScrollTop from 'hooks/useScrollTop';
 import useTitle from 'hooks/useTitle';
 import React from 'react';
 import QuizIcon from '@mui/icons-material/Quiz';
+import Navigation from 'components/Navigation';
+import useCloseNavigation from 'hooks/useCloseNavigation';
 
 const { GAMES } = ROUTES;
 
@@ -75,10 +77,12 @@ const GAME_LIST = [
 
 function PlayGamesPage() {
   useTitle('Game');
+  useCloseNavigation();
   useScrollTop();
 
   return (
     <div className="container my-10">
+      <Navigation />
       <Grid container spacing={3}>
         {GAME_LIST.map((box, index) => (
           <Grid item xs={12} md={6} lg={4} key={index}>
