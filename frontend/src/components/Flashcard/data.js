@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMessage } from 'redux/slices/message.slice';
 import Flashcard from '.';
+import Navigation from 'components/Navigation';
 
 const perPage = 7;
 
@@ -134,14 +135,17 @@ function FlashcardData() {
   };
 
   return (
-    <Flashcard
-      list={currentList}
-      total={total}
-      currentPage={pageInfo.page}
-      onNextPage={handleNextClick}
-      onPrevPage={handlePrevClick}
-      onWordPackChange={onWordPackChange}
-    />
+    <React.Fragment>
+      <Navigation />
+      <Flashcard
+        list={currentList}
+        total={total}
+        currentPage={pageInfo.page}
+        onNextPage={handleNextClick}
+        onPrevPage={handlePrevClick}
+        onWordPackChange={onWordPackChange}
+      />
+    </React.Fragment>
   );
 }
 

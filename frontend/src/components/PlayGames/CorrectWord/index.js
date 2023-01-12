@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import CorrectWordResult from '../Result';
 import useStyle from './style';
+import Navigation from 'components/Navigation';
 
 function shuffleAnswers(word, phonetic, wrongList) {
   let mergeList = [...wrongList, { word, phonetic }];
@@ -121,6 +122,7 @@ function CorrectWord({ list }) {
 
   return (
     <div className="flex-center-col h-100vh container">
+      <Navigation />
       <div className={`${classes.root} container dyno-game-box`}>
         {/* title */}
         <div className="dyno-game-title">

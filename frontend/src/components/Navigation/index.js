@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import SettingMenu from './SettingMenu';
 import useStyle from './style';
 import './index.scss';
+import BackButton from 'components/BackButton/BackButton';
 
 
 function Navigation() {
@@ -36,6 +37,7 @@ function Navigation() {
     <div className={`${classes.navWrapper} w-100vw`} id="dynoNav">
       <div className={`${classes.nav} w-100`}>
         <div className="container h-100 flex-center--ver">
+          <BackButton />
           {/* Logo */}
           {(isXsDevice || !showInput) && (
             <Link to="/">
@@ -57,7 +59,7 @@ function Navigation() {
             )}
 
             {/* Search bar */}
-            <div className="mr-5 search-box-cus">
+            {/* <div className="mr-5 search-box-cus">
               <SearchInputCustom
               className="search-content"
                 placeholder="Nhập từ khoá ..."
@@ -69,7 +71,7 @@ function Navigation() {
                   />
                 }
               />
-            </div>
+            </div> */}
           </div>
 
           <div className={`${classes.control} flex-center--ver`}>

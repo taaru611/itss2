@@ -7,6 +7,7 @@ import React from 'react';
 import DynoDictionaryItemData from '../Item/data';
 import DynoDictionarySkeleton from '../Skeleton';
 import useStyle from '../style';
+import Navigation from 'components/Navigation';
 
 function FavoriteDictionary({
   list,
@@ -21,6 +22,7 @@ function FavoriteDictionary({
 
   return (
     <div className={`${classes.root} dyno-container`}>
+      <Navigation />
       {/* title - menu */}
       <div className="flex-center-between">
         <h1 className="dyno-title">Từ điển của bạn</h1>
