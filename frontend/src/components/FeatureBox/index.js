@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import useStyle from './style';
 import './index.scss';
 
-
 function FeatureBox({ to, imgUrl, title, subTitle }) {
   // const classes = useStyle();
   return (

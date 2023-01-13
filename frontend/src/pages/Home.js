@@ -22,6 +22,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
 import QuizIcon from '@mui/icons-material/Quiz';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 const FEATURE_LIST = [
   {
     title: 'Từ vựng với Flashcard',
@@ -47,23 +48,23 @@ const FEATURE_LIST = [
     subTitle: 'Danh sách những từ vựng yêu thích mà bạn đã lưu',
     to: ROUTES.FAVORITE,
   },
-//<<<<<<< HEAD
+  //<<<<<<< HEAD
   // {
   //   title: 'Ngữ pháp',
   //   imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
   //   subTitle: 'Danh sách tổng hợp những cấu trúc câu',
   //   to: ROUTES.GRAMMAR,
   // },
-//=======
-//   {
-//     title: 'Ngữ pháp',
-//     imgUrl: (
-//       <GTranslateIcon className="card-spec2-icon" sx={{ color: '#2c3e50' }} />
-//     ),
-//     subTitle: 'Danh sách tổng hợp những cấu trúc câu trong tiếng Anh',
-//     to: ROUTES.GRAMMAR,
-//   },
-// >>>>>>> eb95ad60d6d70ebf04b72fd32e34edbce6c6e19b
+  //=======
+  //   {
+  //     title: 'Ngữ pháp',
+  //     imgUrl: (
+  //       <GTranslateIcon className="card-spec2-icon" sx={{ color: '#2c3e50' }} />
+  //     ),
+  //     subTitle: 'Danh sách tổng hợp những cấu trúc câu trong tiếng Anh',
+  //     to: ROUTES.GRAMMAR,
+  //   },
+  // >>>>>>> eb95ad60d6d70ebf04b72fd32e34edbce6c6e19b
   // {
   //   title: 'Từ vựng TOEIC',
   //   subTitle: 'Các từ vựng thường gặp trong đề thi Toeic',
@@ -100,9 +101,10 @@ const FEATURE_LIST = [
   // },
   {
     title: 'Bài học',
-    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,
-    subTitle:
-      'Lựa chọn học theo cấp độ N1, N2, N3,..',
+    imgUrl: (
+      <MenuBookIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />
+    ),
+    subTitle: 'Lựa chọn học theo cấp độ N1, N2, N3,..',
     to: ROUTES.LESSONS.HOME,
   },
 ];

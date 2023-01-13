@@ -2,14 +2,13 @@ import useCloseNavigation from 'hooks/useCloseNavigation';
 import useTitle from 'hooks/useTitle';
 
 import Grid from '@material-ui/core/Grid';
-import wordMatchingIcon from 'assets/icons/games/word-match.png';
 import { ROUTES } from 'constant';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import useStyle from '../../components/FeatureBox/style';
 
-import QuizIcon from '@mui/icons-material/Quiz';
+import image from '../../assets/icons/book.png';
 
 const { LESSONS } = ROUTES;
 
@@ -60,7 +59,7 @@ function LessonDataPage() {
             {
               title: `Gói ôn tập từ vựng N1 _ gói ${i + 1}`,
               subTitle: 'Ôn tập từ vựng theo trình độ N1.',
-              imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
+              imgUrl: image,
               to: LESSONS.LESSON_PAGE,
               packInfo: packInfo,
               page: `${i + 1}`,
@@ -71,7 +70,7 @@ function LessonDataPage() {
       } catch (error) {}
     })();
   }, []);
-  
+
   return (
     <div className="container my-10">
       <Grid container spacing={3}>
@@ -80,7 +79,11 @@ function LessonDataPage() {
             <Link
               to={{
                 pathname: box.to,
-                state: { page: box.page, packInfo: box.packInfo, perPage:box.perPage },
+                state: {
+                  page: box.page,
+                  packInfo: box.packInfo,
+                  perPage: box.perPage,
+                },
               }}
               className={`${classes.root} flex-center--ver w-100`}>
               <img className={classes.icon} src={box.imgUrl} alt="Icon" />

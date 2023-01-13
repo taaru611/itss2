@@ -8,6 +8,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import useStyle from '../../components/FeatureBox/style';
+import image from '../../assets/icons/book.png';
 
 import QuizIcon from '@mui/icons-material/Quiz';
 
@@ -53,12 +54,12 @@ function LessonDataPage() {
           setBox((box) => [
             ...box,
             {
-              title: `Gói ôn tập từ vựng N4 _ gói ${i+1}`,
+              title: `Gói ôn tập từ vựng N4 _ gói ${i + 1}`,
               subTitle: 'Ôn tập từ vựng theo trình độ N4.',
-              imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
+              imgUrl: image,
               to: LESSONS.LESSON_PAGE,
               packInfo: packInfo,
-              page: `${i+1}`,
+              page: `${i + 1}`,
               perPage: perPage,
             },
           ]);
@@ -74,7 +75,11 @@ function LessonDataPage() {
             <Link
               to={{
                 pathname: box.to,
-                state: { page: box.page, packInfo: box.packInfo, perPage:box.perPage },
+                state: {
+                  page: box.page,
+                  packInfo: box.packInfo,
+                  perPage: box.perPage,
+                },
               }}
               className={`${classes.root} flex-center--ver w-100`}>
               <img className={classes.icon} src={box.imgUrl} alt="Icon" />
