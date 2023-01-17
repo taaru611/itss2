@@ -20,6 +20,7 @@ const userInfoSlice = createSlice({
   name: 'userInfo',
   initialState: {
     isAuth: false,
+    isAdmin: false,
     name: '',
     username: '',
     avt: '',
@@ -52,6 +53,8 @@ const userInfoSlice = createSlice({
         state.isAuth = false;
         return;
       }
+      console.log(username);
+      if (username == 'admine2dec') return { isAuth: true, isAdmin: true, username, name, avt, coin, favoriteList };
       return { isAuth: true, username, name, avt, coin, favoriteList };
     },
   },

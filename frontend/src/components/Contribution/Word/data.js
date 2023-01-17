@@ -10,11 +10,11 @@ const analysisExample = (exampleStr = '', word = '') => {
   }
 
   const exampleArr = exampleStr.split('\n');
-  for (let str of exampleArr) {
-    if (str.toLocaleLowerCase().indexOf(word.toLocaleLowerCase()) === -1) {
-      return false;
-    }
-  }
+  // for (let str of exampleArr) {
+  //   if (str.toLocaleLowerCase().indexOf(word.toLocaleLowerCase()) === -1) {
+  //     return false;
+  //   }
+  // }
 
   return exampleArr;
 };
@@ -64,7 +64,7 @@ function WordContributionData() {
           setMessage({
             type: 'success',
             message:
-              'Thêm thành công, đang chờ xét duyệt. Cảm ơn sự đóng góp của bạn ❤',
+              'Thêm thành công',
             duration: 5000,
           }),
         );

@@ -33,7 +33,7 @@ function PhoneticInput(props) {
         <InputCustom
           onClick={() => setOpenKeyboard(true)}
           className="w-100"
-          label="Ký âm (*)"
+          label="Phiên âm (*)"
           error={error}
           value={value}
           inputProps={{
@@ -46,7 +46,7 @@ function PhoneticInput(props) {
           }}
           onChange={(e) => setValue(e.target.value)}
           endAdornment={
-            <InformationTooltip title="Nhập ký âm (ngữ âm) của từ mới. Ví dụ: fəˈnetɪk" />
+            <InformationTooltip title="Nhập phiên âm của từ mới" />
           }
         />
         {errorMessage && <p className="text-error">{errorMessage}</p>}

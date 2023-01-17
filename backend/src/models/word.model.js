@@ -29,7 +29,7 @@ const wordSchema = new Schema({
   level: {
     type: String,
     required: true,
-    enum: ['0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'],
+    enum: ['0', 'N1', 'N2', 'N3', 'N4', 'N5'],
     default: '0',
   },
 

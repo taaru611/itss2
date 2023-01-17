@@ -84,6 +84,7 @@ export const ROUTES = {
     GRAMMARLY: '/games/grammarly',
     VIP: '/games/vip',
   },
+  ADMIN: '/admin'
 };
 
 export const REGEX = {
@@ -111,35 +112,35 @@ export const VOICE_KEYS = {
 export const WORD_TYPES = [
   {
     value: 'n',
-    label: 'Noun - Danh từ',
+    label: 'Danh từ',
   },
   {
     value: 'adj',
-    label: 'Adjective - Tính từ',
+    label: 'Tính từ',
   },
   {
     value: 'adv',
-    label: 'Adverb - Trạng từ',
+    label: 'Trạng từ',
   },
   {
     value: 'v',
-    label: 'Verb - Động từ',
+    label: 'Động từ',
   },
   {
     value: 'pro',
-    label: 'Pronoun - Đại từ',
+    label: 'Đại từ',
   },
   {
     value: 'con',
-    label: 'Conjunction - Liên từ',
+    label: 'Liên từ',
+  },
+  {
+    value: 'count',
+    label: 'Trợ từ đếm',
   },
   {
     value: 'pre',
-    label: 'Preposition - Giới từ',
-  },
-  {
-    value: 'det',
-    label: 'Determiners - Hạn định từ',
+    label: 'Giới từ',
   },
 ];
 
@@ -173,7 +174,7 @@ export const WORD_LEVELS = [
 export const WORD_SPECIALTY = [
   { value: '0', label: 'Không' },
   // { value: '1', label: 'Công nghệ sinh học (Biotechnology)' },
-  { value: '6', label: 'Công nghệ thông tin (Information Technology)' },//
+  { value: '6', label: 'Công nghệ thông tin' },//
   // { value: '14', label: 'Công nghệ thực phẩm (Food Technology)' },
   // { value: '20', label: 'Giải trí (Entertainment)' },
   // { value: '3', label: 'Kinh tế học (Economics)' },
@@ -182,14 +183,14 @@ export const WORD_SPECIALTY = [
   // { value: '19', label: 'Mỹ thuật (Fine Arts Industry)' },
   { value: '12', label: 'Ngành Marketing' },//
   // { value: '18', label: 'Quản trị khách sạn (Hotel Management)' },
-  { value: '7', label: 'Quản trị kinh doanh (Business Adminstration)' },//
+  { value: '7', label: 'Quản trị kinh doanh' },//
   // { value: '5', label: 'Quản trị nhân lực (Human Resource Management)' },
   // { value: '13', label: 'Thiết kế (Design UI/UX)' },
   // { value: '4', label: 'Thương mại quốc tế (International Trade)' },
   // { value: '10', label: 'Thương mại điện tử (E-Commerce)' },
   // { value: '9', label: 'Tiếng Anh thương mại (Business English)' },
   // { value: '11', label: 'Tài chính ngân hàng (Finance & Banking)' },
-  { value: '16', label: 'Văn hoá học (Culturology)' },//
-  { value: '17', label: 'Xây dựng (Construction Industry)' },//
+  { value: '16', label: 'Văn hoá học' },//
+  { value: '17', label: 'Xây dựng' },//
   // { value: '15', label: 'Xã hội học (Sociology)' },
 ];

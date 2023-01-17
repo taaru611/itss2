@@ -147,7 +147,7 @@ function WordContribution({ onSubmitForm, submitting }) {
 
   return (
     <div className={classes.root}>
-      <h1 className={classes.title}>Thêm từ mới của bạn vào Hama</h1>
+      <h1 className={classes.title}>Thêm từ mới</h1>
       <div className="dyno-break"></div>
 
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
@@ -311,10 +311,10 @@ function WordContribution({ onSubmitForm, submitting }) {
           <Grid item xs={12} md={6} lg={4}>
             <InputCustom
               className="w-100"
-              label="Ghi chú"
+              label="Nghĩa của câu ví dụ"
               multiline
               endAdornment={
-                <InformationTooltip title="Nhập thêm ghi chú mà bạn muốn cho từ. Thêm nhiều dòng bằng cách xuống dòng." />
+                <InformationTooltip title="Thêm nhiều dòng bằng cách xuống dòng." />
               }
               error={Boolean(errors.note)}
               inputProps={{
@@ -337,14 +337,14 @@ function WordContribution({ onSubmitForm, submitting }) {
             />
           </Grid>
 
-          {/* word topics */}
+          {/* word topics
           <TopicSelect
             onChange={(topicList) => (topics.current = topicList)}
             resetFlag={resetFlag}
             buttonTitle="Thêm chủ đề"
             buttonWrapper={ButtonWrapper}
             tagsWrapper={TagsWrapper}
-          />
+          /> */}
         </Grid>
 
         <div className="dyno-break"></div>

@@ -1,3 +1,4 @@
+import Navigation from 'components/Navigation';
 import React, { useState } from 'react';
 import SentenceContributionData from './Sentence/data';
 import useStyle from './style';
@@ -9,6 +10,7 @@ function Contribution() {
 
   return (
     <div className="container">
+      <Navigation />
       <div className={classes.root}>
         <ul className={classes.tabs}>
           <li

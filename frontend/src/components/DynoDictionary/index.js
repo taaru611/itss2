@@ -9,6 +9,7 @@ import DDSettingWordPack from './SettingWordPack';
 import DynoDictionarySkeleton from './Skeleton';
 import useStyle from './style';
 import Navigation from 'components/Navigation';
+import useCloseNavigation from 'hooks/useCloseNavigation';
 
 function DynoDictionary({
   list,
@@ -22,7 +23,7 @@ function DynoDictionary({
   isTOEIC,
 }) {
   const classes = useStyle();
-
+  useCloseNavigation()
   return (
     <div className={`${classes.root} dyno-container`}>
       <Navigation />

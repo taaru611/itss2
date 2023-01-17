@@ -59,9 +59,9 @@ const routes = [
     component: () => <IPAPage />,
   },
   {
-    path: ROUTES.CONTRIBUTION,
+    path: ROUTES.ADMIN,
     exact: true,
-    isProtect: false,
+    isProtect: true,
     component: () => <ContributionPage />,
   },
   {

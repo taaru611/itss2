@@ -17,12 +17,15 @@ import { ROUTES } from 'constant';
 import useScrollTop from 'hooks/useScrollTop';
 import useTitle from 'hooks/useTitle';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import StyleIcon from '@mui/icons-material/Style';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import GTranslateIcon from '@mui/icons-material/GTranslate';
+import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
 import QuizIcon from '@mui/icons-material/Quiz';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import Navigation from 'components/Navigation';
+import useCloseNavigation from 'hooks/useCloseNavigation';
 const FEATURE_LIST = [
   {
     title: 'Từ vựng với Flashcard',
@@ -81,7 +84,7 @@ const FEATURE_LIST = [
 
   {
     title: 'Làm bài Test',
-    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,
+    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#FF6E31' }} />,
     subTitle:
       'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc làm bài test',
     to: ROUTES.GAMES.HOME,
@@ -92,34 +95,39 @@ const FEATURE_LIST = [
   //   subTitle: 'Cùng xem thành tích của bạn bè và những người khác nhé',
   //   to: ROUTES.LEADERBOARD,
   // },
-  // {
-  //   title: 'Đóng góp',
-  //   imgUrl: editIcon,
-  //   subTitle:
-  //     'Hama rất mong được sự đóng góp của bạn. Bạn có thể thêm từ mới, sửa lỗi sai',
-  //   to: ROUTES.CONTRIBUTION,
-  // },
   {
     title: 'Ngữ Pháp',
     imgUrl: (
-      <MenuBookIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />
-    ),
-    subTitle:
+      <MenuBookIcon className="card-spec2-icon" sx={{ color: '#3d1766' }} />
+      ),
+      subTitle:
       'Lựa chọn học theo cấp độ N1, N2, N3,..',
-    to: ROUTES.LESSONS.HOME,
-  },
-];
-
+      to: ROUTES.LESSONS.HOME,
+    },
+    // {
+    //   title: 'Admin',
+    //   imgUrl: <AdminPanelSettingsTwoToneIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,
+    //   subTitle:
+    //     'Thêm sửa xóa Từ vựng và Ngữ Pháp',
+    //   to: ROUTES.ADMIN,
+    // },
+  ];
+  
 function HomePage() {
   useTitle('Hama - Ứng dụng học tiếng Nhật miễn phí');
+  useCloseNavigation()
   useScrollTop();
   const [wordList, setWordList] = useState();
+  const { isAuth, isAdmin } = useSelector(
+    (state) => state.userInfo,
+  );
   useEffect(() => {
     setWordList(JSON.parse(localStorage.getItem('wordList')));
     console.log(wordList);
   }, []);
   return (
     <div className="container my-10">
+      <Navigation />
       <Grid container spacing={3}>
         {wordList == null ? (
           <></>
@@ -138,7 +146,13 @@ function HomePage() {
           </>
         )}
       </Grid>
-      <Grid container spacing={3}>
+      {isAdmin&&isAuth ? (<FeatureBox
+              imgUrl={<AdminPanelSettingsTwoToneIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />}
+              title={'Admin'}
+              to={ROUTES.ADMIN}
+              subTitle={'Thêm sửa xóa Từ vựng và Ngữ Pháp'}
+            />) :
+      (<Grid container spacing={3}>
         {FEATURE_LIST.map((box, index) => (
           <Grid item xs={12} md={12} lg={12} key={index}>
             <FeatureBox
@@ -149,7 +163,7 @@ function HomePage() {
             />
           </Grid>
         ))}
-      </Grid>
+      </Grid>)}
     </div>
   );
 }

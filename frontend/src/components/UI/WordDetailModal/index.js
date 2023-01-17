@@ -79,7 +79,7 @@ function WordDetailModal(props) {
                 {word}&nbsp;
                 {Boolean(type) && (
                   <span className={classes.type}>( {type} )</span>
-                )}
+                  )}
                 <span className={classes.mean}>{` - ${mean}`}</span>
               </p>
               {Boolean(phonetic) && (
@@ -105,6 +105,19 @@ function WordDetailModal(props) {
             </div>
           )}
 
+          {note && note !== '' && (
+            <>
+              <b className={classes.label}>Nghĩa câu ví dụ:</b>
+              <p>
+                {note.split('\n').map((i, index) => (
+                  <span key={index}>
+                    {i} <br />
+                  </span>
+                ))}
+              </p>
+            </>
+          )}
+          
           {specialty && specialty !== '0' && (
             <p>
               <b className={classes.label}>Thuộc chuyên ngành:</b>
@@ -133,18 +146,6 @@ function WordDetailModal(props) {
             </p>
           )}
 
-          {note && note !== '' && (
-            <>
-              <b className={classes.label}>Ghi chú:</b>
-              <p>
-                {note.split('\n').map((i, index) => (
-                  <span key={index}>
-                    {i} <br />
-                  </span>
-                ))}
-              </p>
-            </>
-          )}
         </div>
       )}
     </Popover>
