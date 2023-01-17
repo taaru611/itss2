@@ -9,6 +9,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import CorrectWordResult from '../Result';
 import useStyle from './style';
 import Navigation from 'components/Navigation';
+import EndButton from 'components/EndButton/EndButton';
 
 function shuffleAnswers(word, phonetic, wrongList) {
   let mergeList = [...wrongList, { word, phonetic }];
@@ -54,6 +55,11 @@ function CorrectWord({ list }) {
   useEffect(() => {
     return () => (isSubscribe.current = false);
   }, []);
+
+  const callbackFunction = (childData) => {
+    setIsDone(childData)
+  };
+
 
   const onAnswer = (answer, answerIndex) => {
     list.splice(current, 1, { ...list[current], userAnswer: answer });
@@ -129,6 +135,7 @@ function CorrectWord({ list }) {
         <div className="dyno-game-title">
           <img src={logoGame} alt="game photo" />
           <h1>Hãy chọn từ đúng</h1>
+          <EndButton parentCallback={callbackFunction} />
         </div>
 
         {!isDone ? (

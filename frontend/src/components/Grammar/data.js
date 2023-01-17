@@ -1,4 +1,5 @@
 import blogApi from 'apis/blogApi';
+import Navigation from 'components/Navigation';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMessage } from 'redux/slices/message.slice';
@@ -19,6 +20,8 @@ function GrammarData() {
           const { blogList = [] } = apiRes.data;
           setLoading(false);
           setList(blogList);
+         
+          blogList.map((word) => { console.log(word.level)});
         }
       } catch (error) {
         const message =
@@ -32,7 +35,12 @@ function GrammarData() {
     };
   }, []);
 
-  return <Grammar loading={loading} list={list} />;
+  return (
+   <>
+  <Navigation/>
+  <Grammar loading={loading} list={list} />
+  </> 
+  )
 }
 
 export default GrammarData;

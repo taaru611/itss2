@@ -99,8 +99,8 @@ const FEATURE_LIST = [
   //   to: ROUTES.CONTRIBUTION,
   // },
   {
-    title: 'Bài học',
-    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,
+    title: 'Ngữ Pháp',
+    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
     subTitle:
       'Lựa chọn học theo cấp độ N1, N2, N3,..',
     to: ROUTES.LESSONS.HOME,

@@ -1,0 +1,15 @@
+.end-button {
+    padding: 10px 30px;
+    margin-left: 600px;
+    background: #e20e0e;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.end-button:hover {
+    background: #b50b0b;
+}

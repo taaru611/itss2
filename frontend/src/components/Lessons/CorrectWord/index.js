@@ -8,6 +8,7 @@ import DynoDictionaryItemData from './Item/data';
 import DDSettingWordPack from './SettingWordPack';
 import DynoDictionarySkeleton from './Skeleton';
 import useStyle from './style';
+import Navigation from 'components/Navigation';
 
 function DynoDictionary({
   list,
@@ -23,6 +24,7 @@ function DynoDictionary({
   const classes = useStyle();
   return (
     <div className={`${classes.root} dyno-container`}>
+      <Navigation />
       {/* title - menu */}
       <div className="flex-center-between">
         <h1 className="dyno-title">Từ điển Hama</h1>
