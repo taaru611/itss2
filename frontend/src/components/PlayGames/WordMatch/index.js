@@ -4,6 +4,7 @@ import RightIcon from '@material-ui/icons/CheckCircle';
 import HelpIcon from '@material-ui/icons/Help';
 import incorrectAudio from 'assets/audios/incorrect.mp3';
 import logoGame from 'assets/icons/games/word-match.png';
+import EndButton from 'components/EndButton/EndButton';
 import TooltipCustom from 'components/UI/TooltipCustom';
 import { UX } from 'constant';
 import { onPlayAudio, playSoundAnswer } from 'helper/speaker.helper';
@@ -29,6 +30,9 @@ function WordMatchGame({ list }) {
   const { current, nRight, nWrong, resetFlag } = state;
   const nRightConsecutive = useRef({ top: 0, n: 0 });
 
+  const callbackFunction = (childData) => {
+    setIsDone(childData)
+  };  
   const handleDone = () => {
     setIsDone(true);
   };
@@ -99,6 +103,8 @@ function WordMatchGame({ list }) {
               <HelpIcon className="ml-5" />
             </TooltipCustom>
           </h1>
+          <EndButton parentCallback={callbackFunction} />
+        
         </div>
 
         {!isDone ? (

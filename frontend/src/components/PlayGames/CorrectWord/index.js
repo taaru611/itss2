@@ -130,9 +130,9 @@ function CorrectWord({ list }) {
   return (
     <div className="flex-center-col h-100vh container">
       <Navigation />
-      <div className={`${classes.root} container dyno-game-box`}>
+      <div className={`${classes.root} container dyno-game-box`} style={{position:"relative"}}>
         {/* title */}
-        <div className="dyno-game-title">
+        <div className="dyno-game-title" >
           <img src={logoGame} alt="game photo" />
           <h1>Hãy chọn từ đúng</h1>
           <EndButton parentCallback={callbackFunction} />

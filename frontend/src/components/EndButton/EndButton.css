@@ -1,6 +1,8 @@
 .end-button {
     padding: 10px 30px;
-    margin-left: 600px;
+    position: absolute;
+    top: 50px;
+    right: 80px;
     background: #e20e0e;
     color: #fff;
     font-weight: bold;

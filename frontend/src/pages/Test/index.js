@@ -22,7 +22,7 @@ const GAME_LIST = [
     title: 'Hãy chọn từ đúng',
     subTitle:
       'Ôn tập từ vựng bằng cách chọn 1 đáp án đúng nhất trong 4 câu trả lời có nghĩa khớp với từ được cho.',
-    imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
+    imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#FF6E31" }}/>,
     to: GAMES.CORRECT_WORD,
   },
   // {
