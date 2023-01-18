@@ -21,7 +21,7 @@ function Contribution() {
           <li
             className={`${classes.tab} ${mode === 1 ? 'active' : ''}`}
             onClick={() => setMode(1)}>
-            Thêm câu
+            Thêm ngữ pháp
           </li>
         </ul>
 

@@ -5,8 +5,9 @@ import LoopIcon from '@material-ui/icons/Loop';
 import ResetIcon from '@material-ui/icons/RotateLeft';
 import SaveIcon from '@material-ui/icons/Save';
 import InputCustom from 'components/UI/InputCustom';
+import SelectCustom from 'components/UI/SelectCustom';
 import TopicSelect from 'components/UI/TopicSelect';
-import { MAX } from 'constant';
+import { MAX, WORD_LEVELS } from 'constant';
 import { SENTENCE_TOPICS } from 'constant/sentence-topics';
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
@@ -16,30 +17,33 @@ import InformationTooltip from '../Word/InformationTooltip';
 import useStyle from '../Word/style';
 
 const schema = yup.object().shape({
-  sentence: yup
+  title: yup
     .string()
     .trim()
-    .required('Hãy nhập một câu bằng tiếng Anh vào đây')
+    .required('Hãy nhập một tiêu đề ngữ pháp vào đây')
     .lowercase()
-    .max(MAX.SENTENCE_LEN, `Từ dài tối đã ${MAX.SENTENCE_LEN} ký tự`),
-  mean: yup
+    .max(MAX.SENTENCE_LEN, `Từ dài tối đa ${MAX.SENTENCE_LEN} ký tự`),
+  desc: yup
     .string()
     .trim()
     .lowercase()
-    .required('Hãy nhập những ý nghĩa của câu bằng tiếng Việt')
+    .required('Hãy nhập ý nghĩa của ngữ pháp bằng tiếng Việt')
     .max(MAX.SENTENCE_MEAN_LEN, `Từ dài tối đã ${MAX.SENTENCE_MEAN_LEN} ký tự`),
-  note: yup
+  html: yup
     .string()
     .max(
       MAX.SENTENCE_NOTE_LEN,
-      `Ghi chú tối đa ${MAX.SENTENCE_NOTE_LEN} ký tự`,
+      `Giải thích tối đa ${MAX.SENTENCE_NOTE_LEN} ký tự`,
     ),
+  level: yup
+    .string()
+    .required('Chọn cấp bậc của ngữ pháp')
+    .oneOf(WORD_LEVELS.map((i) => i.value)),  
 });
 const ButtonWrapper = (props) => <Grid {...props} item xs={12} />;
 
 function SentenceContribution({ submitting, onSubmitForm }) {
   const classes = useStyle();
-  const topics = useRef([]);
   const [resetFlag, setResetFlag] = useState(0);
   const {
     register,
@@ -51,18 +55,17 @@ function SentenceContribution({ submitting, onSubmitForm }) {
   });
 
   const onResetForm = () => {
-    topics.current = [];
     setResetFlag(Math.random() + 1);
-    reset({ sentence: '', mean: '', note: '' });
+    reset({ title: '', desc: '', html: '', level: '' });
   };
 
   const handleSubmitForm = (formData) => {
-    onSubmitForm({ ...formData, topics: topics.current });
+    onSubmitForm({ ...formData});
   };
 
   return (
     <div className={classes.root}>
-      <h1 className={classes.title}>Thêm câu giao tiếp hay mà bạn biết</h1>
+      <h1 className={classes.title}>Thêm ngữ pháp</h1>
       <div className="dyno-break"></div>
 
       <form onSubmit={handleSubmit(handleSubmitForm)} autoComplete="off">
@@ -71,16 +74,16 @@ function SentenceContribution({ submitting, onSubmitForm }) {
           <Grid item xs={12}>
             <InputCustom
               className="w-100"
-              label="Một câu bằng tiếng Anh (*)"
+              label="Tiêu đề ngữ pháp"
               multiline
               error={Boolean(errors.sentence)}
               inputProps={{
                 autoFocus: true,
                 className: classes.sentenceInput,
                 maxLength: MAX.SENTENCE_LEN,
-                name: 'sentence',
+                name: 'title',
 
-                ...register('sentence'),
+                ...register('title'),
               }}
               // onChange={(e) => handleCheckWordExistence(e, null)}
             />
@@ -93,17 +96,17 @@ function SentenceContribution({ submitting, onSubmitForm }) {
           <Grid item xs={12}>
             <InputCustom
               className="w-100"
-              label="Nghĩa của câu bằng tiếng Viết (*)"
+              label="Nghĩa của ngữ pháp bằng tiếng Viết (*)"
               error={Boolean(errors.mean)}
               multiline
               inputProps={{
                 maxLength: MAX.SENTENCE_MEAN_LEN,
-                name: 'mean',
+                name: 'desc',
                 className: classes.sentenceInput,
-                ...register('mean'),
+                ...register('desc'),
               }}
               endAdornment={
-                <InformationTooltip title="Nhập những nghĩa của câu vừa nhập. Thêm nhiều nghĩa bằng cách xuống dòng." />
+                <InformationTooltip title="Nhập những nghĩa của ngữ pháp vừa nhập." />
               }
               // onChange={(e) => handleCheckWordExistence(e, null)}
             />
@@ -116,17 +119,17 @@ function SentenceContribution({ submitting, onSubmitForm }) {
           <Grid item xs={12}>
             <InputCustom
               className="w-100"
-              label="Thêm ghi chú cho câu trên (*)"
+              label="Thêm giải thích cho ngữ pháp trên (*)"
               error={Boolean(errors.note)}
               multiline
               inputProps={{
                 className: classes.sentenceInput,
                 maxLength: MAX.SENTENCE_NOTE_LEN,
-                name: 'note',
-                ...register('note'),
+                name: 'html',
+                ...register('html'),
               }}
               endAdornment={
-                <InformationTooltip title="Thêm các ghi chú, có thể là cấu trúc câu, cách dùng, lưu ý, ..." />
+                <InformationTooltip title="Thêm các ví dụ, cấu trúc câu, cách dùng, lưu ý, ..." />
               }
               // onChange={(e) => handleCheckWordExistence(e, null)}
             />
@@ -136,14 +139,28 @@ function SentenceContribution({ submitting, onSubmitForm }) {
           </Grid>
 
           {/* topics */}
-          <TopicSelect
+          {/* <TopicSelect
             buttonWrapper={ButtonWrapper}
             tagsWrapper={ButtonWrapper}
             topicList={SENTENCE_TOPICS}
             onChange={(v) => (topics.current = v)}
             resetFlag={resetFlag}
-          />
+          /> */}
+          <Grid item xs={12} md={12} lg={12}>
+              <SelectCustom
+                className="w-100"
+                label="Cấp bậc của ngữ pháp (*)"
+                options={WORD_LEVELS}
+                error={Boolean(errors.level)}
+                resetFlag={resetFlag}
+                inputProps={{ name: 'level', ...register('level') }}
+              />
+              {errors.level && (
+                <p className="text-error">{errors.level?.message}</p>
+              )}
+          </Grid>
         </Grid>
+
 
         <div className="dyno-break"></div>
 
@@ -166,7 +183,7 @@ function SentenceContribution({ submitting, onSubmitForm }) {
               submitting ? <LoopIcon className="ani-spin" /> : <SaveIcon />
             }
             variant="contained">
-            Thêm câu
+            Thêm ngữ pháp
           </Button>
         </div>
       </form>

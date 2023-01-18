@@ -1,7 +1,34 @@
+const { isExistSentence } = require('../services/common.service');
 const {
+  createBlog,
   getBlogListService,
   getBlogHtmlService,
 } = require('../services/blog.service');
+
+exports.postBlog = async (req, res, next) => {
+  try {
+    const { title, desc, html, level } = req.body;
+
+    // const isExist = await isExistSentence(title);
+
+    // if (isExist) {
+    //   return res
+    //     .status(409)
+    //     .json({ message: 'Ngữ pháp đã tồn tại. Vui lòng thêm khác.' });
+    // }
+
+    const isCreated = await createBlog(title, desc, html, level);
+
+    if (isCreated) {
+      return res.status(200).json({ message: 'success' });
+    }
+
+    return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
+  } catch (error) {
+    console.error('POST CONTRIBUTE SENTENCE ERROR: ', error);
+    return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
+  }
+};
 
 exports.getBlogList = async (req, res, next) => {
   try {

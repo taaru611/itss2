@@ -19,6 +19,12 @@ const blogSchema = new Schema({
     required: true,
     trim: true,
   },
+  level: {
+    type: String,
+    required: true,
+    enum: ['0', 'N1', 'N2', 'N3', 'N4', 'N5'],
+    default: '0',
+  },
 });
 
 const BlogModel = mongoose.model('Blog', blogSchema, 'blogs');

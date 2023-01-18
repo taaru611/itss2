@@ -16,3 +16,13 @@ exports.getBlogHtmlService = async (_id) => {
     return html;
   } catch (error) {}
 };
+
+exports.createBlog = async (title, desc, html, level) => {
+  try {
+    const result = BlogModel.create({ title, desc, html, level });
+    if (result) return true;
+    return false;
+  } catch (error) {
+    throw error;
+  }
+};
