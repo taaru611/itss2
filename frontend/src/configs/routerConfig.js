@@ -1,6 +1,7 @@
 import Logout from 'components/Logout';
 import { ROUTES } from 'constant';
 import HomePage from 'pages/Home';
+import TestPage from 'pages/Test';
 import React from 'react';
 import { Route } from 'react-router';
 const RegisterPage = React.lazy(() => import('pages/Register'));
@@ -34,6 +35,7 @@ const LessonPage = React.lazy(() => import('pages/Lessons/LessonPage'));
 
 // routes for app
 const routes = [
+
   {
     path: ROUTES.HOME,
     exact: true,
@@ -51,6 +53,12 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <RegisterPage />,
+  },
+  {
+    path: ROUTES.TEST,
+    exact: true,
+    isProtect: false,
+    component: () => <TestPage />,
   },
   {
     path: ROUTES.IPA,

@@ -50,6 +50,7 @@ export const MIN = {
 export const ROUTES = {
   HOME: '/',
   LOGIN: '/login',
+  TEST: '/test',
   REGISTER: '/register',
   FORGOT_PASSWORD: '/forgot-password',
   LOGOUT: '/logout',

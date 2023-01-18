@@ -24,6 +24,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
 import QuizIcon from '@mui/icons-material/Quiz';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import Navigation from 'components/Navigation';
 import useCloseNavigation from 'hooks/useCloseNavigation';
 const FEATURE_LIST = [
@@ -81,20 +82,6 @@ const FEATURE_LIST = [
   //   subTitle: 'Tất cả những động từ bất quy tắc trong tiếng Anh',
   //   to: ROUTES.IRREGULAR,
   // },
-
-  {
-    title: 'Làm bài Test',
-    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#FF6E31' }} />,
-    subTitle:
-      'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc làm bài test',
-    to: ROUTES.GAMES.HOME,
-  },
-  // {
-  //   title: 'Bảng xếp hạng',
-  //   imgUrl: medalIcon,
-  //   subTitle: 'Cùng xem thành tích của bạn bè và những người khác nhé',
-  //   to: ROUTES.LEADERBOARD,
-  // },
   {
     title: 'Ngữ Pháp',
     imgUrl: (
@@ -104,6 +91,27 @@ const FEATURE_LIST = [
       'Lựa chọn học theo cấp độ N1, N2, N3,..',
       to: ROUTES.LESSONS.HOME,
     },
+  {
+    title: 'Làm bài Test',
+    imgUrl: <QuizIcon className="card-spec2-icon" sx={{ color: '#FF6E31' }} />,
+    subTitle:
+      'Ôn luyện qua việc làm bài test',
+    to: ROUTES.TEST,
+  },
+
+  {
+    title: 'Chơi Game',
+    imgUrl: <SportsEsportsIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,
+    subTitle:
+      'Cùng chơi game để rèn luyện kiến thức đã học',
+    to: ROUTES.GAMES.HOME,
+  },
+  // {
+  //   title: 'Bảng xếp hạng',
+  //   imgUrl: medalIcon,
+  //   subTitle: 'Cùng xem thành tích của bạn bè và những người khác nhé',
+  //   to: ROUTES.LEADERBOARD,
+  // },
     // {
     //   title: 'Admin',
     //   imgUrl: <AdminPanelSettingsTwoToneIcon className="card-spec2-icon" sx={{ color: '#f7ce42' }} />,

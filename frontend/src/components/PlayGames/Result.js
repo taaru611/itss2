@@ -116,8 +116,8 @@ function CorrectWordResult({
           </Button>
         </div>
       </div>
-      <h1 className="mt-10 ">Lịch sử bài thi</h1>
-      {gameHistory.map((question, index) => {
+      {(gameHistory == null || gameHistory === undefined) ? <div></div> : <h1 className="mt-10 ">Lịch sử bài thi</h1>}
+      {(gameHistory == null || gameHistory === undefined) ? <div></div> : gameHistory.map((question, index) => {
         var status = question.word === question.userAnswer ? 1 : 2;
         return (
           <>

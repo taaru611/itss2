@@ -18,20 +18,20 @@ import useCloseNavigation from 'hooks/useCloseNavigation';
 const { GAMES } = ROUTES;
 
 const GAME_LIST = [
-  // {
-  //   title: 'Hãy chọn từ đúng',
-  //   subTitle:
-  //     'Ôn tập từ vựng bằng cách chọn 1 đáp án đúng nhất trong 4 câu trả lời có nghĩa khớp với từ được cho.',
-  //   imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
-  //   to: GAMES.CORRECT_WORD,
-  // },
   {
-    title: 'Ghép từ',
+    title: 'Hãy chọn từ đúng',
     subTitle:
-      'Ghép các ký tự đã cho thành một chữ có nghĩa đúng với từ đã cho.',
-    imgUrl: <SportsEsportsIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
-    to: GAMES.WORD_MATCHING,
+      'Ôn tập từ vựng bằng cách chọn 1 đáp án đúng nhất trong 4 câu trả lời có nghĩa khớp với từ được cho.',
+    imgUrl: <QuizIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
+    to: GAMES.CORRECT_WORD,
   },
+  // {
+  //   title: 'Ghép từ',
+  //   subTitle:
+  //     'Ghép các ký tự đã cho thành một chữ có nghĩa đúng với từ đã cho.',
+  //   imgUrl: <SportsEsportsIcon className='card-spec2-icon' sx={{ color: "#f7ce42" }}/>,
+  //   to: GAMES.WORD_MATCHING,
+  // },
   // {
   //   title: 'Tay nhanh hơn não',
   //   subTitle:
@@ -76,7 +76,7 @@ const GAME_LIST = [
   }, */
 ];
 
-function PlayGamesPage() {
+function TestPage() {
   useTitle('Game');
   useCloseNavigation();
   useScrollTop();
@@ -100,4 +100,4 @@ function PlayGamesPage() {
   );
 }
 
-export default PlayGamesPage;
+export default TestPage;

@@ -64,13 +64,13 @@ function WordMatchGame({ list }) {
   const handleNext = () => {
     onPlayAudio(incorrectAudio);
     if (current + 1 >= nQuestion) {
-      setState({ ...state, nWrong: nWrong + 1 });
+      setState({ ...state, nWrong: nWrong});
       handleDone();
     } else {
       setState({
         ...state,
         current: current + 1,
-        nWrong: nWrong + 1,
+        nWrong: nWrong,
         resetFlag: current,
       });
     }
@@ -147,6 +147,7 @@ function WordMatchGame({ list }) {
           </>
         ) : (
           <CorrectWordResult
+            gameHistory = {null}
             onReplay={handleReplay}
             nRight={nRight}
             nWrong={nWrong}
