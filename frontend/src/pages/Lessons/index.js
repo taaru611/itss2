@@ -16,14 +16,14 @@ const GAME_LIST = [
     title: 'Trình độ N1',
     subTitle:
       'Ôn tập ngữ pháp theo trình độ N1.',
-    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
+    imgUrl: <GTranslateIcon className='card-spec2-icon n1' sx={{ color: "#2c3e5000" }}/>,
     to: LESSONS.LESSON_N1,
   },
   {
     title: 'Trình độ N2',
     subTitle:
       'Ôn tập ngữ pháp theo trình độ N2.',
-    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
+    imgUrl: <GTranslateIcon className='card-spec2-icon n2' sx={{ color: "#2c3e5000" }}/>,
 
     to: LESSONS.LESSON_N2,
   },
@@ -31,7 +31,7 @@ const GAME_LIST = [
     title: 'Trình độ N3',
     subTitle:
       'Ôn tập ngữ pháp theo trình độ N3.',
-    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
+    imgUrl: <GTranslateIcon className='card-spec2-icon n3' sx={{ color: "#2c3e5000" }}/>,
 
     to: LESSONS.LESSON_N3,
   },
@@ -39,7 +39,7 @@ const GAME_LIST = [
     title: 'Trình độ N4',
     subTitle:
       'Ôn tập ngữ pháp theo trình độ N4.',
-    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
+    imgUrl: <GTranslateIcon className='card-spec2-icon n4' sx={{ color: "#2c3e5000" }}/>,
 
     to: LESSONS.LESSON_N4,
   },
@@ -47,7 +47,7 @@ const GAME_LIST = [
     title: 'Trình độ N5',
     subTitle:
       'Ôn tập ngữ pháp theo trình độ N5.',
-    imgUrl: <GTranslateIcon className='card-spec2-icon' sx={{ color: "#2c3e50" }}/>,
+    imgUrl: <GTranslateIcon className='card-spec2-icon n5' sx={{ color: "#2c3e5000" }}/>,
     to: LESSONS.LESSON_N5,
   },
 ];

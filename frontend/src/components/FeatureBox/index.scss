@@ -30,7 +30,9 @@
     .card-spec2-icon{
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     border: 1px solid transparentize(#000, 0.9);
-    background-color: white;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
     padding: 10px;
 
         z-index: 2;
@@ -39,8 +41,28 @@
     top: 0;
     bottom: 0;
     left: -50px;
-
+    
     font-size: 100px;
     border-radius: 100%;
     }
+    .n1 {
+        background-image: url('https://duhocankhang.edu.vn/wp-content/uploads/2019/12/N1.png');
+    }
+
+    .n2 {
+        background-image: url('https://duhocankhang.edu.vn/wp-content/uploads/2019/12/N2.png');
+    } 
+
+    .n3 {
+        background-image: url('https://duhocankhang.edu.vn/wp-content/uploads/2019/12/N3.png');
+    } 
+
+    .n4 {
+        background-image: url('https://duhocankhang.edu.vn/wp-content/uploads/2019/12/N4.png');
+    }
+
+    .n5 {
+        background-image: url('https://duhocankhang.edu.vn/wp-content/uploads/2019/12/N5.png');
+    }
+    
 }
