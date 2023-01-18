@@ -7,7 +7,7 @@ function GrammarPage() {
   useCloseNavigation();
   useTitle('Ngữ pháp, cấu trúc câu');
 
-  return <GrammarData />;
+  return <GrammarData level={'N3'}/>;
 }
 
 export default GrammarPage;

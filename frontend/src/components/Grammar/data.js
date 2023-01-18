@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setMessage } from 'redux/slices/message.slice';
 import Grammar from '.';
 
-function GrammarData() {
+function GrammarData(props) {
   const dispatch = useDispatch();
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,9 +19,9 @@ function GrammarData() {
         if (apiRes.status === 200 && isSub) {
           const { blogList = [] } = apiRes.data;
           setLoading(false);
-          setList(blogList);
+          const filterList = blogList.filter((word) =>  word.level == props.level );
+          setList(filterList);
          
-          blogList.map((word) => { console.log(word.level)});
         }
       } catch (error) {
         const message =
