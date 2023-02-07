@@ -31,7 +31,8 @@ function GrammarListBox({
     if (!blogHtml) return;
     const elem = document.getElementById(_id);
     if (elem) {
-      elem.setAttribute('srcdoc', blogHtml);
+      var newHtml = blogHtml.replace(/\n/g , "<br>");
+      elem.setAttribute('srcdoc', newHtml);
     }
   }, [blogHtml]);
 
